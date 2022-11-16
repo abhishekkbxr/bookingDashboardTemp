@@ -39,9 +39,7 @@ app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
-// app.use("/",(req,res)=>{
-//     res.json({message:"ok , this is fine"})
-// })
+app.use("/",usersRoute)
 app.use("/api/auth" , authRoute)
 app.use("/api/hotels" , hotelsRoute)
 app.use("/api/rooms" , roomsRoute)
