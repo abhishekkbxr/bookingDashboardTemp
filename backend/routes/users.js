@@ -18,19 +18,19 @@ const router = express.Router();
 
 // update hotel
 
-router.put("/:id",  updateUser);
+router.put("/:id", verifyUser , updateUser);
 
 // delete
 
-router.delete("/:id", deleteUser);
+router.delete("/:id",verifyUser , deleteUser);
 
 // get specefic hotels
 
-router.get("/:id",getUser);
+router.get("/:id",verifyUser ,getUser);
 
 // get all hotels 
 
-router.get("/", getUsers);
+router.get("/",verifyAdmin , getUsers);
 
 
 export default router;

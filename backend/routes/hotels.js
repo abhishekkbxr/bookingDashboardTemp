@@ -6,15 +6,15 @@ import { verifyAdmin } from "../utils/verifyToken.js";
 
 //  create Hotel
 
-router.post("/", createHotel);
+router.post("/",verifyAdmin , createHotel);
 
 // update hotel
 
-router.put("/:id",updateHotel);
+router.put("/:id",verifyAdmin ,updateHotel);
 
 // delete
 
-router.delete("/:id",deleteHotel);
+router.delete("/:id",verifyAdmin ,deleteHotel);
 
 // get specefic hotels
 
