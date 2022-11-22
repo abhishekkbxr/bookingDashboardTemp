@@ -14,7 +14,7 @@ const Datatable = ({columns}) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [List , setList] = useState()
-  const { data, loading, error } = useFetch(`/${path}`);  
+  const { data, loading, error } = useFetch(`https://hserverbooking.herokuapp.com/api/${path}`);  
 
   useEffect(() => {
 
@@ -24,7 +24,7 @@ const Datatable = ({columns}) => {
 
   const handleDelete =async (id) => {
     try {
-      await axios.delete(`/${path}/${id}`);
+      await axios.delete(`https://hserverbooking.herokuapp.com/api/${path}/${id}`);
       setList(List.filter((item) => item._id !== id));
     } catch (error) {
 
@@ -57,7 +57,7 @@ const Datatable = ({columns}) => {
     <div className="datatable">
       <div className="datatableTitle">
          {path}
-        <Link to={`/${path}/new`} className="link">
+        <Link to={`${path}/new`} className="link">
           Add New
         </Link>
       </div>
